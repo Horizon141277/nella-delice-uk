@@ -60,7 +60,7 @@
  /* Texte réellement placé en bas à gauche de la grande vidéo */
 .hero-content {
   position: absolute;
-  left: max(20px, calc((100% - 1200px) / 2));
+  left: 20px;
   bottom: 42px;
   width: min(560px, calc(100% - 40px));
   margin: 0;
@@ -90,9 +90,14 @@
 }
 
 /* Rapprocher visuellement ces deux 200 g des quatre premiers */
+/* Six pots 200 g, agrandis autour du centre de leur cadre */
+.product:nth-child(-n+4) .product-media img {
+  transform: scale(1.15) !important;
+}
+
 .product:nth-child(5) .product-media img,
 .product:nth-child(6) .product-media img {
-  transform: scale(1.2) !important;
+  transform: scale(1.28) !important;
 }
 
 /* Centrer le 320 g et agrandir encore un peu le 700 g */
