@@ -343,19 +343,79 @@
       <video id="story-video" autoplay muted loop playsinline preload="metadata" aria-label="Nella Délice second video"></video>
     </div>
   </div>
-</section><style>
+</section>
+<style>
+  /* Professionnels : beige côté texte, blanc côté produits */
   #shop {
-    background: linear-gradient(90deg, #f7f1e6 0%, #faf7f0 48%, #fffdf9 100%);
+    background: linear-gradient(
+      90deg,
+      #f3eadb 0%,
+      #f8f3ea 42%,
+      #fffdf9 68%,
+      #ffffff 100%
+    );
   }
 
   #shop .trade-copy .eyebrow {
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     letter-spacing: .18em;
   }
 
-  @media (min-width: 651px) {
+  /* Texte à gauche, quatre produits à droite */
+  #shop .trade-image {
+    order: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding: 18px;
+    background: #fff;
+    border: 1px solid #e7d5a3;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(96, 66, 24, .10);
+  }
+
+  #shop .trade-image figure {
+    min-width: 0;
+    margin: 0;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #eee3cd;
+    border-radius: 6px;
+  }
+
+  #shop .trade-image img,
+  #shop .trade-image figure:nth-child(2) img {
+    width: 100%;
+    height: 185px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    transform: none;
+  }
+
+  #shop .trade-image figcaption {
+    min-height: 40px;
+    margin-top: 8px;
+    color: var(--brown);
+    font-size: .76rem;
+    line-height: 1.3;
+  }
+
+  @media (max-width: 650px) {
     #shop .trade-image {
-      order: -1;
+      gap: 9px;
+      padding: 10px;
+    }
+
+    #shop .trade-image figure {
+      padding: 5px;
+    }
+
+    #shop .trade-image img,
+    #shop .trade-image figure:nth-child(2) img {
+      height: 135px;
+    }
+
+    #shop .trade-image figcaption {
+      font-size: .68rem;
     }
   }
 </style>
@@ -371,12 +431,31 @@
 
     <div class="trade-image">
       <figure>
-        <img id="trade-one" alt="Nella Délice professional 1 kg jar" loading="lazy">
+        <img id="trade-one"
+             alt="Crème et éclats de pistache, 1 kg"
+             loading="lazy">
         <figcaption>Crème et éclats de pistache · 1 kg</figcaption>
       </figure>
+
       <figure>
-        <img id="trade-five" alt="Nella Délice professional 5 kg format" loading="lazy">
+        <img src="photos/Cr%C3%A9me%20%C3%A9clats%20de%20Pistache%20et%20Kadayif%201Kg.avif"
+             alt="Crème, éclats de pistache et kadayif, 1 kg"
+             loading="lazy">
+        <figcaption>Crème, éclats de pistache et kadayif · 1 kg</figcaption>
+      </figure>
+
+      <figure>
+        <img id="trade-five"
+             alt="Nella Délice, 5 kg"
+             loading="lazy">
         <figcaption>Nella Délice · 5 kg</figcaption>
+      </figure>
+
+      <figure>
+        <img src="photos/Cr%C3%A9me%20de%20Noisette%20grill%C3%A9e%205Kg.avif"
+             alt="Crème de noisette grillée, 5 kg"
+             loading="lazy">
+        <figcaption>Crème de noisette grillée · 5 kg</figcaption>
       </figure>
     </div>
   </div>
