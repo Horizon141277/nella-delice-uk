@@ -418,6 +418,39 @@
       font-size: .68rem;
     }
   }
+  /* Donner plus de présence aux quatre formats professionnels */
+@media (min-width: 651px) {
+  #shop .trade-grid {
+    grid-template-columns: minmax(0, 36%) minmax(0, 60%);
+    gap: 4%;
+  }
+
+  #shop .trade-image {
+    gap: 18px;
+    padding: 24px;
+  }
+
+  #shop .trade-image img,
+  #shop .trade-image figure:nth-child(2) img {
+    height: clamp(215px, 24vw, 290px);
+  }
+}
+
+#shop .trade-image figcaption {
+  font-weight: 700;
+  font-size: .85rem;
+}
+
+@media (max-width: 650px) {
+  #shop .trade-image img,
+  #shop .trade-image figure:nth-child(2) img {
+    height: 165px;
+  }
+
+  #shop .trade-image figcaption {
+    font-size: .74rem;
+  }
+}
 </style>
 
 <section class="section trade" id="shop">
