@@ -311,11 +311,18 @@
 }/* Section internationale */
 .global-presence {
   position: relative;
-
-  background: #f8f4ee;
   overflow: hidden;
   padding: 105px 0;
-  
+  background-color: #f8f4ee;
+  background-image:
+    linear-gradient(
+      rgba(248, 244, 238, .60),
+      rgba(248, 244, 238, .60)
+    ),
+    url("photos/world-map-nella-delice.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: min(1250px, 115%);
   text-align: center;
   color: var(--brown);
 }
