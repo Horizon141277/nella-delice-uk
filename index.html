@@ -308,6 +308,118 @@
   #story .combined-events {
     margin-top: 48px;
   }
+}/* Section internationale */
+.global-presence {
+  position: relative;
+
+  background: #f8f4ee;
+  overflow: hidden;
+  padding: 105px 0;
+  
+  text-align: center;
+  color: var(--brown);
+}
+
+.presence-content {
+  position: relative;
+  z-index: 1;
+}
+
+.presence-eyebrow {
+  margin: 0 0 14px;
+  color: var(--gold);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .20em;
+  text-transform: uppercase;
+}
+
+.global-presence h2 {
+  margin: 0;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+}
+
+.presence-intro {
+  max-width: 620px;
+  margin: 20px auto 40px;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.country-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.country-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 58px;
+  padding: 12px 14px;
+  border: 1px solid rgba(77, 55, 40, .24);
+  border-radius: 9px;
+  background: rgba(255, 253, 249, .92);
+  color: var(--brown);
+  font-size: .95rem;
+  box-shadow: 0 5px 18px rgba(75, 51, 33, .06);
+}
+
+.country-card--new {
+  border-color: var(--gold);
+  box-shadow: 0 6px 20px rgba(171, 133, 78, .18);
+}
+
+.new-badge {
+  padding: 4px 7px;
+  border-radius: 99px;
+  background: var(--gold);
+  color: #fff;
+  font-size: .60rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.coming-soon-title {
+  margin: 44px 0 15px;
+  color: var(--gold);
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.country-grid--coming {
+  max-width: 500px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.country-card--coming {
+  opacity: .60;
+}
+
+@media (max-width: 650px) {
+  .global-presence {
+    padding: 70px 0;
+  }
+
+  .country-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .country-card {
+    min-height: 54px;
+    padding: 10px 7px;
+    font-size: .84rem;
+  }
+
+  .country-grid--coming {
+    max-width: none;
+  }
 }</style></head><body><header class="site-header"><div class="wrap header-inner"><a class="brand" href="#top" aria-label="Nella Délice UK home"><img id="logo" alt="Nella Délice logo"><span>Nella Délice</span></a><nav class="nav" aria-label="Main navigation"><a href="#shop">Shop</a><a href="#range">Our Range</a><a href="#story">Our Story</a><a href="#discover">Discover</a><a href="professionals.html">Trade</a><a href="#about">About</a><a href="#contact">Contact</a><img class="flag" src="https://flagcdn.com/gb.svg" width="30" height="20" alt="Drapeau du Royaume-Uni"><button class="bag" type="button" disabled aria-label="Basket unavailable until shop launch" title="Online checkout coming later"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="M5 10h20l-2 17H7L5 10zm6 1V8a4 4 0 0 1 8 0v3"/></svg></button></nav></div></header><main id="top"><section class="hero" aria-labelledby="hero-title"><video id="hero-video" autoplay muted loop playsinline preload="metadata" aria-label="Nella Délice opening video"></video><div class="hero-overlay"></div><div class="wrap hero-content"><span class="eyebrow">Nella Délice · United Kingdom</span><h1 id="hero-title">The Elite of Indulgence</h1><p>Discover Nella Délice in the UK.</p><div class="buttons"><a class="btn" href="#range">Explore the range</a><a class="btn outline" href="#shop">Shop the collection</a></div></div></section><section class="section" id="range"><div class="wrap"><div class="section-title"><span class="eyebrow">Everyday indulgence</span><h2>Our Range</h2><p>Six 200 g jars, a 320 g jar and a 700 g jar. Product information and weights should be checked against the packaging before launch.</p></div><div class="products" id="products"></div></div></section><section class="section soft" id="story">
   <div class="wrap story story-combined">
     <div class="story-combined-content">
@@ -669,7 +781,45 @@
       Always refer to the packaging for ingredients and allergens.
     </p>
   </div>
-</section></main><footer class="footer" id="contact"><div class="wrap footer-inner"><div><h2>Nella Délice UK</h2><p>Ordering, social links and contact details will be connected before launch.</p></div><div><div class="social-title">Follow Nella Délice</div><div class="socials" aria-label="Planned social channels; links not yet connected">
+</section>
+
+<section class="global-presence" aria-labelledby="presence-title">
+  <div class="wrap presence-content">
+    <p class="presence-eyebrow">OUR PRESENCE</p>
+
+    <h2 id="presence-title">A world of Nella Délice</h2>
+
+    <p class="presence-intro">
+      Nella Délice is now available in the United Kingdom.
+    </p>
+
+    <div class="country-grid" aria-label="Countries where Nella Délice is available">
+      <div class="country-card">🇫🇷 France</div>
+      <div class="country-card">🇨🇭 Switzerland</div>
+      <div class="country-card">🇧🇪 Belgium</div>
+      <div class="country-card">🇪🇸 Spain</div>
+      <div class="country-card">🇬🇵 Guadeloupe</div>
+      <div class="country-card">🇲🇶 Martinique</div>
+      <div class="country-card">🇷🇪 Réunion</div>
+
+      <div class="country-card country-card--new">
+        🇬🇧 United Kingdom
+        <span class="new-badge">NEW</span>
+      </div>
+    </div>
+
+    <p class="coming-soon-title">COMING SOON</p>
+
+    <div class="country-grid country-grid--coming" aria-label="Countries coming soon">
+      <div class="country-card country-card--coming">🇨🇦 Canada</div>
+      <div class="country-card country-card--coming">🇺🇸 United States</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer" id="contact"><div class="wrap footer-inner"><div><h2>Nella Délice UK</h2><p>Ordering, social links and contact details will be connected before launch.</p></div><div><div class="social-title">Follow Nella Délice</div><div class="socials" aria-label="Planned social channels; links not yet connected">
   <span class="social" aria-label="TikTok">
     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/tiktok.svg" alt="TikTok">
   </span>
