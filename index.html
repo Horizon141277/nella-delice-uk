@@ -431,6 +431,95 @@
   .country-grid--coming {
     max-width: none;
   }
+}.contact-section{
+  background:#f7f1e6;
+  border-top:1px solid #e7d5a3;
+}
+
+.contact-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
+  gap:7%;
+  align-items:start;
+}
+
+.contact-intro h2{
+  font-size:clamp(2.4rem,4vw,4rem);
+  margin:12px 0 18px;
+}
+
+.contact-intro p{
+  color:var(--muted);
+}
+
+.contact-intro a{
+  color:var(--brown);
+}
+
+.contact-form{
+  padding:26px;
+  background:#fff;
+  border:1px solid #e7d5a3;
+  border-radius:9px;
+  box-shadow:0 8px 24px rgba(96,66,24,.10);
+}
+
+.contact-form h3{
+  margin:0 0 8px;
+  font-size:1.55rem;
+}
+
+.contact-form .form-note{
+  margin-bottom:18px;
+  font-size:.82rem;
+  color:var(--muted);
+}
+
+.contact-form label{
+  display:block;
+  margin:14px 0 6px;
+  color:var(--brown);
+  font-size:.86rem;
+  font-weight:700;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  display:block;
+  width:100%;
+  padding:10px 11px;
+  border:1px solid #cbbfae;
+  border-radius:4px;
+  background:#fffdf9;
+  color:var(--brown);
+  font:inherit;
+}
+
+.contact-form textarea{
+  resize:vertical;
+}
+
+.contact-form .btn{
+  margin-top:20px;
+}
+
+.form-status{
+  min-height:24px;
+  margin:13px 0 0;
+  color:var(--brown);
+  font-size:.88rem;
+}
+
+@media(max-width:650px){
+  .contact-layout{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .contact-form{
+    padding:20px;
+  }
 }</style></head><body><header class="site-header"><div class="wrap header-inner"><a class="brand" href="#top" aria-label="Nella Délice UK home"><img id="logo" alt="Nella Délice logo"><span>Nella Délice</span></a><nav class="nav" aria-label="Main navigation"><a href="#shop">Shop</a><a href="#range">Our Range</a><a href="#story">Our Story</a><a href="#discover">Discover</a><a href="professionals.html">Trade</a><a href="#about">About</a><a href="#contact">Contact</a><img class="flag" src="https://flagcdn.com/gb.svg" width="30" height="20" alt="Drapeau du Royaume-Uni"><button class="bag" type="button" disabled aria-label="Basket unavailable until shop launch" title="Online checkout coming later"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="M5 10h20l-2 17H7L5 10zm6 1V8a4 4 0 0 1 8 0v3"/></svg></button></nav></div></header><main id="top"><section class="hero" aria-labelledby="hero-title"><video id="hero-video" autoplay muted loop playsinline preload="metadata" aria-label="Nella Délice opening video"></video><div class="hero-overlay"></div><div class="wrap hero-content"><span class="eyebrow">Nella Délice · United Kingdom</span><h1 id="hero-title">The Elite of Indulgence</h1><p>Discover Nella Délice in the UK.</p><div class="buttons"><a class="btn" href="#range">Explore the range</a><a class="btn outline" href="#shop">Shop the collection</a></div></div></section><section class="section" id="range"><div class="wrap"><div class="section-title"><span class="eyebrow">Everyday indulgence</span><h2>Our Range</h2><p>Six 200 g jars, a 320 g jar and a 700 g jar. Product information and weights should be checked against the packaging before launch.</p></div><div class="products" id="products"></div></div></section><section class="section soft" id="story">
   <div class="wrap story story-combined">
     <div class="story-combined-content">
@@ -801,7 +890,84 @@
     class="world-map-image"
   >
 </section>
+<section class="section contact-section" id="contact-us">
+  <div class="wrap contact-layout">
 
+    <div class="contact-intro">
+      <span class="eyebrow">Contact Nella Délice UK</span>
+      <h2>How can we help?</h2>
+
+      <p>
+        Send us your question and choose the appropriate team.
+        We will respond as soon as possible.
+      </p>
+
+      <p>
+        <strong>General enquiries</strong><br>
+        <a href="mailto:contact@nelladelice.co.uk">contact@nelladelice.co.uk</a>
+      </p>
+
+      <p>
+        <strong>Trade enquiries</strong><br>
+        <a href="mailto:trade@nelladelice.co.uk">trade@nelladelice.co.uk</a>
+      </p>
+    </div>
+
+    <form class="contact-form" id="contact-form" method="POST">
+      <h3>Send us a message</h3>
+      <p class="form-note">Fields marked with * are required.</p>
+
+      <label for="contact-destination">Who would you like to contact? *</label>
+      <select id="contact-destination" name="Enquiry type" required>
+        <option value="">Please select</option>
+        <option value="General enquiries">General enquiries</option>
+        <option value="Trade enquiries">Trade enquiries</option>
+      </select>
+
+      <label for="customer-type">I am a… *</label>
+      <select id="customer-type" name="Customer type" required>
+        <option value="">Please select</option>
+        <option value="Private customer">Private customer</option>
+        <option value="Professional">Professional</option>
+      </select>
+
+      <div id="private-fields" hidden>
+        <label for="first-name">First name *</label>
+        <input id="first-name" name="First name" type="text">
+
+        <label for="last-name">Last name *</label>
+        <input id="last-name" name="Last name" type="text">
+
+        <label for="private-phone">Telephone number *</label>
+        <input id="private-phone" name="Telephone number" type="tel" autocomplete="tel">
+      </div>
+
+      <div id="business-fields" hidden>
+        <label for="company-name">Company name *</label>
+        <input id="company-name" name="Company name" type="text" autocomplete="organization">
+
+        <label for="business-contact">Contact name *</label>
+        <input id="business-contact" name="Business contact name" type="text" autocomplete="name">
+
+        <label for="business-phone">Telephone number *</label>
+        <input id="business-phone" name="Business telephone number" type="tel" autocomplete="tel">
+
+        <label for="company-address">Company address *</label>
+        <textarea id="company-address" name="Company address" rows="3"></textarea>
+      </div>
+
+      <label for="sender-email">Your e-mail address *</label>
+      <input id="sender-email" name="email" type="email" autocomplete="email" required>
+
+      <label for="contact-message">Your message *</label>
+      <textarea id="contact-message" name="message" rows="6" required></textarea>
+
+      <button class="btn" type="submit">Send message</button>
+      <p class="form-status" id="form-status" aria-live="polite"></p>
+    </form>
+
+  </div>
+</section>
 </main>
 
 <footer class="footer" id="contact">
@@ -842,4 +1008,60 @@
     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/youtube.svg" alt="YouTube">
   </span>
 </div><p>Links will be added after confirmation.</p></div></div></footer><div class="floaters"><a id="wa-button" class="wa" href="https://wa.me/447950745069" target="_blank" rel="noopener noreferrer" aria-label="Contact Nella Délice UK on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 1a15 15 0 0 0-13 22.5L1 31l7.6-2A15 15 0 1 0 16 1zm0 27a12 12 0 0 1-6.2-1.7l-.5-.3-4.5 1.2L6 23l-.3-.5A12 12 0 1 1 16 28zm6.6-9.2c-.4-.2-2-1-2.4-1.1-.3-.1-.5-.2-.8.2l-1.1 1.3c-.2.2-.4.3-.8.1a10 10 0 0 1-4.8-4.2c-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7a.8.8 0 0 0 0-.8L12.8 9c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1.1.5a4.5 4.5 0 0 0-1.4 3.3c0 1.9 1.4 3.8 1.7 4.1 1.8 2.7 4 4.6 7.2 5.9 2.7 1.1 3.8.9 4.6.8 1-.2 2-1 2.3-1.9.3-.9.3-1.7.2-1.9-.1-.2-.4-.3-.8-.5z"/></svg></a><button id="bot-button" type="button" aria-label="Open site assistant" aria-controls="bot-panel" aria-expanded="false"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M15 2h2v4h-2zM6 9a4 4 0 0 0-4 4v10a4 4 0 0 0 4 4h20a4 4 0 0 0 4-4V13a4 4 0 0 0-4-4H6zm0 3h20a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V13a1 1 0 0 1 1-1zm3 5a2 2 0 1 0 4 0 2 2 0 0 0-4 0zm10 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0zm-8 4h10v2H11z"/></svg></button></div><aside class="panel" id="wa-panel" hidden aria-label="WhatsApp information"><div class="panel-top"><h2>WhatsApp</h2><button type="button" class="close" data-close aria-label="Close">×</button></div><p>The UK WhatsApp number has not been connected yet. This button does not send a message.</p></aside><aside class="panel" id="bot-panel" hidden aria-label="Site assistant"><div class="panel-top"><h2>How can we help?</h2><button type="button" class="close" data-close aria-label="Close">×</button></div><p>Choose a question below. This preview uses prepared answers, not a live AI service.</p><div class="choices"><button type="button" data-q="products">Products</button><button type="button" data-q="orders">Orders</button><button type="button" data-q="trade">Trade</button><button type="button" data-q="allergens">Allergens</button></div><div class="answer" id="answer" role="status" aria-live="polite">Select a topic to see an answer.</div></aside><script>
-const asset=(folder,name)=>folder+'/'+encodeURIComponent(name);document.getElementById('logo').src=asset('logo','Logo Nella Délice.png');for(const [id,file] of [['hero-video','video 2 N D.mp4'],['story-video','video 3 N D.mp4']]){const video=document.getElementById(id);video.src=asset('videos',file);video.muted=true;video.defaultMuted=true;video.playsInline=true}document.getElementById('trade-one').src=asset('photos','Créme et éclats de Pistache 1 Kg.avif');document.getElementById('trade-five').src=asset('photos','Nella délice 05 Kg.avif');const items=[['Cacao noisette avec éclats','200 g','Cacao noisette avec éclats 200G.avif',''],['Cacao noisette avec éclats et kadayif','200 g','Cacao noisette avec éclats et Kadayif 200g.avif',''],['Cacao pistache avec éclats','200 g','Cacao pistache avec éclats 200g.avif',''],['Cacao pistache sans éclats','200 g','Cacao pistache sana éclats 200G.avif',''],['Crème et éclats de pistache','200 g','Créme et éclats de Pistache 200G.avif','pistachio'],['Crème et éclats de pistache avec kadayif','200 g','Créme et éclats de pistache avec kadayif 200 g.avif','pistachio'],['Noisette grillée','320 g','Noisette grillée 320 g.avif','medium'],['Nella Délice','700 g','Nella délice 700 g.avif','large']];const grid=document.getElementById('products');for(const [name,weight,file,scale] of items){const card=document.createElement('article');card.className='product';const media=document.createElement('div');media.className='product-media';const img=document.createElement('img');img.src=asset('photos',file);img.alt=name+' '+weight;img.loading='lazy';img.className=scale;media.append(img);const body=document.createElement('div');body.className='product-body';const h=document.createElement('h3');h.textContent=name;const small=document.createElement('small');small.textContent=weight;body.append(h,small);card.append(media,body);grid.append(card)}const wa=document.getElementById('wa-panel'),bot=document.getElementById('bot-panel'),wb=document.getElementById('wa-button'),bb=document.getElementById('bot-button');function closePanels(){wa.hidden=true;bot.hidden=true;wb.setAttribute('aria-expanded','false');bb.setAttribute('aria-expanded','false')}function toggle(panel,button){const opening=panel.hidden;closePanels();panel.hidden=!opening;button.setAttribute('aria-expanded',String(opening))}bb.addEventListener('click',()=>toggle(bot,bb));document.querySelectorAll('[data-close]').forEach(x=>x.addEventListener('click',closePanels));document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanels()});const replies={products:'Explore the eight consumer jars in Our Range. Professional formats are on the Trade page.',orders:'Online checkout and delivery details have not been enabled. No orders can be placed through this preview.',trade:'Visit the Trade page for 1 kg and 5 kg formats. Trade ordering will be confirmed later.',allergens:'Check the original label for ingredients and allergens. Do not rely on this preview for dietary decisions.'};document.querySelectorAll('[data-q]').forEach(b=>b.addEventListener('click',()=>document.getElementById('answer').textContent=replies[b.dataset.q]));</script></body></html>
+const asset=(folder,name)=>folder+'/'+encodeURIComponent(name);document.getElementById('logo').src=asset('logo','Logo Nella Délice.png');for(const [id,file] of [['hero-video','video 2 N D.mp4'],['story-video','video 3 N D.mp4']]){const video=document.getElementById(id);video.src=asset('videos',file);video.muted=true;video.defaultMuted=true;video.playsInline=true}document.getElementById('trade-one').src=asset('photos','Créme et éclats de Pistache 1 Kg.avif');document.getElementById('trade-five').src=asset('photos','Nella délice 05 Kg.avif');const items=[['Cacao noisette avec éclats','200 g','Cacao noisette avec éclats 200G.avif',''],['Cacao noisette avec éclats et kadayif','200 g','Cacao noisette avec éclats et Kadayif 200g.avif',''],['Cacao pistache avec éclats','200 g','Cacao pistache avec éclats 200g.avif',''],['Cacao pistache sans éclats','200 g','Cacao pistache sana éclats 200G.avif',''],['Crème et éclats de pistache','200 g','Créme et éclats de Pistache 200G.avif','pistachio'],['Crème et éclats de pistache avec kadayif','200 g','Créme et éclats de pistache avec kadayif 200 g.avif','pistachio'],['Noisette grillée','320 g','Noisette grillée 320 g.avif','medium'],['Nella Délice','700 g','Nella délice 700 g.avif','large']];const grid=document.getElementById('products');for(const [name,weight,file,scale] of items){const card=document.createElement('article');card.className='product';const media=document.createElement('div');media.className='product-media';const img=document.createElement('img');img.src=asset('photos',file);img.alt=name+' '+weight;img.loading='lazy';img.className=scale;media.append(img);const body=document.createElement('div');body.className='product-body';const h=document.createElement('h3');h.textContent=name;const small=document.createElement('small');small.textContent=weight;body.append(h,small);card.append(media,body);grid.append(card)}const wa=document.getElementById('wa-panel'),bot=document.getElementById('bot-panel'),wb=document.getElementById('wa-button'),bb=document.getElementById('bot-button');function closePanels(){
+  wa.hidden=true;
+  bot.hidden=true;
+  bb.setAttribute('aria-expanded','false');
+}function toggle(panel,button){const opening=panel.hidden;closePanels();panel.hidden=!opening;button.setAttribute('aria-expanded',String(opening))}bb.addEventListener('click',()=>toggle(bot,bb));document.querySelectorAll('[data-close]').forEach(x=>x.addEventListener('click',closePanels));document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanels()});const replies={products:'Explore the eight consumer jars in Our Range. Professional formats are on the Trade page.',orders:'Online checkout and delivery details have not been enabled. No orders can be placed through this preview.',trade:'Visit the Trade page for 1 kg and 5 kg formats. Trade ordering will be confirmed later.',allergens:'Check the original label for ingredients and allergens. Do not rely on this preview for dietary decisions.'};document.querySelectorAll('[data-q]').forEach(b=>b.addEventListener('click',()=>document.getElementById('answer').textContent=replies[b.dataset.q]));const contactForm = document.getElementById('contact-form');
+const destination = document.getElementById('contact-destination');
+const customerType = document.getElementById('customer-type');
+const privateFields = document.getElementById('private-fields');
+const businessFields = document.getElementById('business-fields');
+const formStatus = document.getElementById('form-status');
+
+const privateRequired = [
+  document.getElementById('first-name'),
+  document.getElementById('last-name'),
+  document.getElementById('private-phone')
+];
+
+const businessRequired = [
+  document.getElementById('company-name'),
+  document.getElementById('business-contact'),
+  document.getElementById('business-phone'),
+  document.getElementById('company-address')
+];
+
+function updateCustomerFields() {
+  const isPrivate = customerType.value === 'Private customer';
+  const isBusiness = customerType.value === 'Professional';
+
+  privateFields.hidden = !isPrivate;
+  businessFields.hidden = !isBusiness;
+
+  privateRequired.forEach(function(field) {
+    field.required = isPrivate;
+  });
+
+  businessRequired.forEach(function(field) {
+    field.required = isBusiness;
+  });
+}
+
+customerType.addEventListener('change', updateCustomerFields);
+updateCustomerFields();
+
+contactForm.addEventListener('submit', function(event) {
+  if (destination.value === 'General enquiries') {
+    contactForm.action = 'https://formspree.io/f/mvkgedkw';
+  }
+
+  if (destination.value === 'Trade enquiries') {
+    contactForm.action = 'https://formspree.io/f/xjyknjyd';
+  }
+
+  if (!destination.value) {
+    event.preventDefault();
+    formStatus.textContent = 'Please select who you would like to contact.';
+  }
+});</script></body></html>
